@@ -1,0 +1,16 @@
+{
+  "name": "book-directorty",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {   
+  "start": "node app.js"
+  },
+  "author": "Arnab",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2",
+    "mongoose": "^8.4.4",
+    "body-parser": "^1.20.2"
+  }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Directory System</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="additional.js"></script>
+</head>
+<body>
+    <div id="head">
+        <h1>Book Directory System</h1>
+    </div>
+    <div class="navbar-container">
+        <ul class="navbar">
+            <li><a href='#addbooks'>Add Books</a></li>
+            <li><a href='#deletebooks'>Delete Books</a></li>
+            <li><a href='#searchbooks'>Search Books</a></li>
+            <li><a href='#availbooks'>Available Books</a></li>
+        </ul>
+    </div>
+    <div class="section-body">
+        <section id="addbooks">
+            <h3>Add Books</h3>
+            <h4>Please Fill this form to insert books</h4>
+            <div id="addbooks_br">
+            <form method='post' action="/add_books" >
+                <label>Name of the Book: <input type='text' name="Name" required></label>
+                <br>
+                <label>Name of the Author: <input type='text' name="Author" required></label>
+                <br>
+                <label>Type of the Book: <input type='text' name="Type" required></label>
+                <br>
+                <label>Number of pages: <input type="number" name="Pages" required></label>
+                <br>
+                <label>Link of the ebook: <input type='url' name="ebook" required></label>
+                <br>
+                <div class="form-button">
+                    <input type="submit" class="btn" value="Submit">
+                </div>
+
+            </form>
+        </div>
+        </section>
+        <section id="deletebooks">
+            <h3>Delete Books</h3>
+            <div class="form-container">
+            <form onsubmit="deleteBook(event)">
+                <label>Name of the Book: <input type='text' id="delete-book-name" name='Name' required></label>
+                <br>
+                <label>Password: <input type='password' id="delete-password" name='password' required></label>
+                <br>
+                <input type="submit" class="btn" onclick="deleteBook()" value="Submit">
+            </form>
+            </div>
+        </section>
+        <section id="searchbooks">
+            <h3>Search Books</h3>
+            <input type='text' id="search-bar" placeholder="Search By Book name">
+            <input type='submit' onclick="searchBooks()" class='btn'>
+            <div id="search-results"></div>
+        </section>
+        <section id="availbooks">
+            <h3>Available Books</h3>
+            <div id="available-books"></div>
+        </section>
+    </div>
+</body>
+</html>
