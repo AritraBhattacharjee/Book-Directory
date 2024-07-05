@@ -6,12 +6,12 @@ const mongoose = require('mongoose');
 const { url } = require('inspector');
 const bodyParser = require('body-parser');
 const port = 80;
-
+const Mongo_str = 'mongodb+srv://arnabmondal800:Ioekxtg27LCHJWem@books.gsfhbsy.mongodb.net/';
 //Connceting with mongodb
 mongoose.set('strictQuery',true);
 main().catch(err=>console.log());
 async function main(){
-    await mongoose.connect('mongodb+srv://arnabmondal800:Ioekxtg27LCHJWem@books.gsfhbsy.mongodb.net/');
+    await mongoose.connect(Mongo_str);
 }
 
 //Making bookSchema
