@@ -25,6 +25,7 @@ const bookSchema = new mongoose.Schema({
 
 const Books = new mongoose.model('Books',bookSchema);
 
+app.use(express.static(__dirname));
 //Middleware to parse form data
 app.use(bodyParser.urlencoded({extended: true}));
 //connceting to the form
@@ -86,7 +87,7 @@ app.get('/available_books', (req, res) => {
     });
 });
 
-app.use(express.static(__dirname))
+
 app.get('/',(req,res)=>{
     // Sending html file to home directory
     res.sendFile(path.join(__dirname,'index.html'));
